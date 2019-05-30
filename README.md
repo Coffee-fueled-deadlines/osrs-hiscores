@@ -21,9 +21,9 @@ user.stats
 user.stats['runecrafting']
 
 # Get skill's level, ranking, and experience separately
-user.stats['runcrafting']['level']
-user.stats['runcrafting']['rank']
-user.stats['runcrafting']['experience']
+user.stats['runecrafting']['level']
+user.stats['runecrafting']['rank']
+user.stats['runecrafting']['experience']
 
 # A simpler way to just get a skill's level
 user.skill('attack')
