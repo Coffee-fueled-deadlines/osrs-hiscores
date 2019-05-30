@@ -5,26 +5,26 @@
 	
 	
 ## Example Usage
-	import osrs-hiscores-wrapper
-	
-	# User to lookup
-	username = 'Zezima'
-	
-	# Initialize user object
-	user = Hiscores(username)
-	
-	# Get the entire stat dictionary
-	user.stats
-	
-	# Get a specific skill's ranking, level, and experience
-	user.stats['runecrafting']
-	
-	# Get skill's level, ranking, and experience separately
-	user.stats['runcrafting']['level']
-	user.stats['runcrafting']['rank']
-	user.stats['runcrafting']['experience']
-	
-	# A simpler way to just get a skill's level
-	user.skill('attack')
-	
-	
+```Python
+import osrs-hiscores-wrapper
+
+# User to lookup
+username = 'Zezima'
+
+# Initialize user object
+user = Hiscores(username)
+
+# Get the entire stat dictionary
+user.stats
+
+# Get a specific skill's ranking, level, and experience
+user.stats['runecrafting']
+
+# Get skill's level, ranking, and experience separately
+user.stats['runcrafting']['level']
+user.stats['runcrafting']['rank']
+user.stats['runcrafting']['experience']
+
+# A simpler way to just get a skill's level
+user.skill('attack')
+```
