@@ -6,7 +6,7 @@
 
 ## Installation
 ```
-python -m pip install OSRS_HISCORE_WRAPPER
+python -m pip install OSRS_Hiscores
 ```
 
 ## Example Usage
