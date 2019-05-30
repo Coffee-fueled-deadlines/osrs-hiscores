@@ -6,7 +6,7 @@
 
 ## Installation
 ```
-python -m pip install OSRS_Hiscores
+python -m pip install OSRS-Hiscores
 ```
 
 ## Example Usage
