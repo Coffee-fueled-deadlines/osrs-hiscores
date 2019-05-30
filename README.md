@@ -1,7 +1,7 @@
-# OSRS Hiscores Wrapper
+# OSRS Hiscores
 
 ## Purpose
-  The purpose of this Wrapper is to allow for developers to easily access user stats that are recorded and displayed on secure.runescape.com's 'Hiscores' page.  This wrapper neatly packages the skills into an easy to use dictionary.  In addition, additional functionality is added for simple level lookups.
+  The purpose of this library is to interface with Old School Runescape (OSRS)'s Hiscores page and allow developers to access stat levels, ranks, and experience levels in a more intuitive way (via dictionary).  This library accesses this information via a `http.client` request and parses the information accordingly.
 	
 
 ## Installation
@@ -11,7 +11,7 @@ python -m pip install OSRS_HISCORE_WRAPPER
 
 ## Example Usage
 ```Python
-from OSRS_HISCORE_WRAPPER import Hiscores
+from OSRS_Hiscores import Hiscores
 
 # User to lookup
 username = 'Zezima'
