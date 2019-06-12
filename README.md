@@ -16,11 +16,14 @@ from OSRS_Hiscores import Hiscores
 # User to lookup
 username = 'Zezima'
 
-# Initialize user object
-user = Hiscores(username)
+# Initialize user object, if no account type is specified, we assume 'N'
+user = Hiscores(username, 'N')
 
 # Get the entire stat dictionary
 user.stats
+
+# Get total Levels
+user.skill('total')
 
 # Get a specific skill's ranking, level, and experience
 user.stats['runecrafting']
