@@ -4,8 +4,32 @@ import http.client
 from sys import exit
 
 class Hiscores(object):
-
-	def __init__(self, username, actype='N'):
+	"""Hiscores class
+	
+	The Hiscores class deals with collecting the required
+	information needed to fetch user information from in-game
+	API.  After being supplied necessary information, Hiscores
+	class then sets self.stats dictionary with user information.
+	
+	Args:
+		self,
+		username str: The username of the account that you
+			      want to look up information on.
+		actype   str: The account type of the account that
+		              you want to lookup.  If not supplied
+			      this argument defaults to 'N' Normal.
+			      
+	Returns:
+		This object returns nothing.  Instead it sets the 
+		value of self.stats with a dictionary of values
+		keyed by the skill type. Example: self.stats['attack']
+		
+	Example Invocation:
+		from OSRS-Hiscores import Hiscores
+		account = Hiscores('Zezima', 'N')
+		print(account.stats['attack']['level']) # displays attack level
+	"""
+	def __init__(self, username: str, actype='N'):
 		self.username = username
 		self.accountType = actype
 		self.getHTTPResponse()
@@ -52,7 +76,7 @@ class Hiscores(object):
 		subset['total']    = info
 
 		skills = [
-				  'attack',
+			  'attack',
 		          'defense',
 		          'strength',
 		          'hitpoints',
