@@ -9,6 +9,32 @@
 python -m pip install OSRS-Hiscores
 ```
 
+## New Features (v0.5)
+
+upgrade OSRS-Hiscores with:
+```
+python -m pip install OSRS-Hiscores --upgrade
+```
+
+Newest features include:
+```python
+from OSRS_Hiscores import Hiscores
+
+username = 'Zezima'
+user = Hiscores(username, 'N')
+
+# Lets get our attack level, rank, and experience the new way
+print("Current level:", user.skill('attack', 'level'))
+print("Current rank:", user.skill('attack', 'rank'))
+print("Current exp:", user.skill('attack', 'experience'))
+
+# Lets say we want to now the exact experience needed for the next level... simple
+print("Total XP to Next Level:", user.skill('attack','next_level_exp'))
+
+# What if we want the Experience remaining until next level?  We can do that too!
+print("XP Remaining:", user.skill('attack','exp_to_next_level'))
+```
+
 ## Example Usage
 ```Python
 from OSRS_Hiscores import Hiscores
