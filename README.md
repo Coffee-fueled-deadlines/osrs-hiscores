@@ -33,8 +33,13 @@ user.stats['runecrafting']['level']
 user.stats['runecrafting']['rank']
 user.stats['runecrafting']['experience']
 
+# NEW
+user.stats['runecrafting']['next_level_experience'] # Total Exp needed for next level
+user.stats['runecrafting']['exp_to_next_level'] # Exp remaining til next level
+
 # A simpler way to just get a skill's attributes
-user.skill('attack', 'level')
-user.skill('attack', 'rank')
-user.skill('attack', 'experience')
+print("Current level:", user.skill('attack', 'level'))
+print("Current rank:", user.skill('attack', 'rank'))
+print("Current exp:", user.skill('attack', 'experience'))
+print("Exp remaining:", user.skill('attack','exp_to_next_level'))
 ```
