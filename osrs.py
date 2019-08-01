@@ -113,9 +113,13 @@ class Hiscores(object):
 		# set stats dictionary
 		self.stats = subset
 
-	def skill(self,skill):
+	def skill(self, skill, stype):
 		try:
-			return self.stats[skill.lower()]['level']
+			if stype not in ['rank','level','experience']:
+				raise "stype must be 'rank','level', or experience'"
+				exit(0)
+			else:
+				return self.stats[skill.lower()][stype]
 		except KeyError as KE:
 			print("ERROR: skill {} does not exist".format(KE))
 			exit(0)
