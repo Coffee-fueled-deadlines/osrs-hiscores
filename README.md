@@ -33,6 +33,8 @@ user.stats['runecrafting']['level']
 user.stats['runecrafting']['rank']
 user.stats['runecrafting']['experience']
 
-# A simpler way to just get a skill's level
-user.skill('attack')
+# A simpler way to just get a skill's attributes
+user.skill('attack', 'level')
+user.skill('attack', 'rank')
+user.skill('attack', 'experience')
 ```
