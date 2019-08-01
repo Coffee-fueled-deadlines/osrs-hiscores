@@ -35,6 +35,23 @@ class Hiscores(object):
 		self.getHTTPResponse()
 
 	def getHTTPResponse(self):
+		"""getHTTPResponse() method
+		
+		The getHTTPResponse() method communicates with the OSRS Hiscores API
+		and supplies the required information from self.username and
+		self.actype to pull the given users stats and hiscore information.
+		
+		Args:
+			self
+			
+		Returns:
+			None
+			
+		Triggers:
+			self.processResponse(): This method is always triggered, regardless
+			                        of whether or not the query to the API returned
+						successfully or not.
+		"""
 		conn = http.client.HTTPSConnection('secure.runescape.com')
 		if self.accountType == 'N':
 			conn.request("GET", "/m=hiscore_oldschool/index_lite.ws?player={}".format(self.username))
@@ -55,7 +72,26 @@ class Hiscores(object):
 		self.processResponse()
 
 	def processResponse(self):
-		if self.status == 404:
+		"""processResponse() method
+		
+		The processResponse() method processes the response received during the
+		getHTTPResponse() method.  It handles potential 404 errors, 403 errors
+		and the like and sets self.errorMsg accordingly.  On successful Response
+		data is stored in self.data and sent to the self.parseData() method.
+		
+		Args:
+			self
+			
+		Returns:
+			None
+			
+		Triggers:
+			self.error(): This method is triggered whenever the self.status of
+			              a request is not 200 (failed).
+				      
+			self.parseData(): This method is called when self.status is 200 (success)
+		"""
+		if self.status != 200:
 			self.errorMsg = "Player name given not found in account type provided.  Valid account types are, 'N' (Normal), 'IM' (Iron Man), 'UIM' (Ultimate Iron Man), 'HIC' (Hardcore Iron Man)"
 			self.error()
 		else:
@@ -63,7 +99,20 @@ class Hiscores(object):
 			self.parseData()
 
 	def parseData(self):
-
+		"""parseData() method
+		
+		The parseData() method parses the self.data processed in the processResponse()
+		method.  Data parsed in placed in the self.stats dictionary.
+		
+		Args:
+			self
+			
+		Returns:
+			None
+			
+		Triggers:
+			None
+		"""
 		self.data = self.data.replace('\n',',')
 		self.data = self.data.split(',')
 		subset = {}
@@ -103,17 +152,33 @@ class Hiscores(object):
 		counter = 0
 		for i in range(len(skills)):
 			info = {}
-			info['rank']       = self.data[counter+3]
-			info['level']      = self.data[counter+4]
-			info['experience'] = self.data[counter+5]
+			info['rank']       = int(self.data[counter+3])
+			info['level']      = int(self.data[counter+4])
+			info['experience'] = int(self.data[counter+5])
 			subset[skills[i]] = info
 			counter += 3
-
 
 		# set stats dictionary
 		self.stats = subset
 
 	def skill(self, skill, stype: str = 'level'):
+		"""skill() method
+		
+		The skill() method is a more dynamic, intuitive way to access stats
+		then the self.stats dictionary variable.  It allows for a user to
+		provide the skill and stype (level, rank, experience) of the skill
+		they wish information on.
+		
+		Args:
+			skill (str): The OSRS skill to get information on
+			
+			stype (str): One of 'level', 'rank', or 'experience'
+			             to receive information for.  If not
+				     supplied, stype is assumed to be
+				     'level'
+		Returns:
+			self.stats[skill][stype] (int): The info you requested
+		"""
 		try:
 			if stype.lower() not in ['rank','level','experience']:
 				raise "stype must be 'rank','level', or experience'"
