@@ -1,6 +1,7 @@
 name = "OSRS_Hiscores"
 
 import http.client
+import math
 from sys import exit
 
 class Hiscores(object):
@@ -155,6 +156,9 @@ class Hiscores(object):
 			info['rank']       = int(self.data[counter+3])
 			info['level']      = int(self.data[counter+4])
 			info['experience'] = int(self.data[counter+5])
+			level = int(info['level']+1)
+			info['next_level_exp'] = math.floor(sum((math.floor(level + 300 * (2 ** (level / 7.0))) for level in range(1, level)))/4)
+			info['exp_to_next_level'] = int(info['next_level_exp'] - info['experience'])
 			subset[skills[i]] = info
 			counter += 3
 
@@ -178,9 +182,10 @@ class Hiscores(object):
 				     'level'
 		Returns:
 			self.stats[skill][stype] (int): The info you requested
+		
 		"""
 		try:
-			if stype.lower() not in ['rank','level','experience']:
+			if stype.lower() not in ['rank','level','experience','exp_to_next_level']:
 				raise "stype must be 'rank','level', or experience'"
 				exit(0)
 			else:
