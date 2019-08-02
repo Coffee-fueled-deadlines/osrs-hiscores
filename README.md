@@ -1,13 +1,20 @@
 # OSRS Hiscores API Library
 
 ## Purpose
-  The purpose of this library is to interface with Old School Runescape (OSRS)'s Hiscores page and allow developers to access stat levels, ranks, and experience levels in a more intuitive way (via dictionary).  This library accesses this information via a `http.client` request and parses the information accordingly.
-	
+  The purpose of this library is to interface with Old School Runescape (OSRS)'s Hiscores page and allow developers to access stat levels, ranks, and experience levels in a more intuitive way (via dictionary).  This library accesses this information via a `http.client` request and parses the information accordingly.	
+***
 
-## Installation
+### Installation and Upgrades
+
+#### Installation
 ```
 python -m pip install OSRS-Hiscores
 ```
+#### Upgrade
+```
+python -m pip install OSRS-Hiscores --upgrade
+```
+***
 
 ## New Features (v0.5)
 
