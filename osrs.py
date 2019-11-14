@@ -70,6 +70,10 @@ class Hiscores(object):
 			conn.request("GET", "/m=hiscore_oldschool_hardcore_ironman/index_lite.ws?player={}".format(self.username))
 			self.response = conn.getresponse()
 			self.status = self.response.status
+		elif self.accountType == "S":
+			conn.request("GET", "/m=hiscore_oldschool_seasonal/index_lite.ws?player={}".format(self.username))
+			self.response = conn.getresponse()
+			self.status = self.response.status
 		self.processResponse()
 
 	def processResponse(self):
