@@ -1,11 +1,11 @@
 # OSRS Hiscores API Library
 
+## STATUS
+This Package is no longer supported and instead has been implemented into [OSRSBytes](https://github.com/Coffee-fueled-deadlines/OSRSBytes)
+
 ## Purpose
   The purpose of this library is to interface with Old School Runescape (OSRS)'s Hiscores page and allow developers to access stat levels, ranks, and experience levels in a more intuitive way (via dictionary).  This library accesses this information via a `http.client` request and parses the information accordingly.	
 ***
-
-### STATUS
-This Package is no longer supported and instead has been implemented into [OSRSBytes](https://github.com/Coffee-fueled-deadlines/OSRSBytes)
 
 ### __Installation and Upgrades__
 
