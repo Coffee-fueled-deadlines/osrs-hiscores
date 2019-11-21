@@ -4,6 +4,8 @@ import http.client
 import math
 from sys import exit
 
+__status__ = "Closed (Unsupported)"
+
 class Hiscores(object):
 	"""Hiscores class
 	
