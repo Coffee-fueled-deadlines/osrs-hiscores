@@ -1,8 +1,9 @@
 # OSRS Hiscores API Library
+![maintained](https://img.shields.io/maintenance/no/2019?style=for-the-badge)<br>
+![platform & version support](https://img.shields.io/pypi/pyversions/OSRS-Hiscores?style=for-the-badge)<br><br>
 ![version](https://img.shields.io/pypi/v/OSRS-Hiscores?style=for-the-badge)<br>
 ![downloads](https://img.shields.io/pypi/dm/OSRS-Hiscores?style=for-the-badge)<br>
 ![size](https://img.shields.io/github/languages/code-size/coffee-fueled-deadlines/osrs-hiscores?style=for-the-badge)<br>
-![platform & version support](https://img.shields.io/pypi/pyversions/OSRS-Hiscores?style=for-the-badge)<br>
 
 ## STATUS
 This Package is no longer supported and instead has been implemented into [OSRSBytes](https://github.com/Coffee-fueled-deadlines/OSRSBytes)
